@@ -1,6 +1,6 @@
 use nalgebra::{Matrix3, Vector3, Point3};
 pub mod read_and_write;
-pub mod vectors;
+pub mod linalg;
 
 use std::fs::File;
 use std::io::BufReader;

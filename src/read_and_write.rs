@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::{BufReader, Write};
 use std::fs;
 use crate::{Mesh, Triangle, Vertex};
-use crate::vectors::array_to_matrix;
+use crate::linalg::array_to_matrix;
 use byteorder::{LittleEndian, WriteBytesExt};
 use nalgebra::Point3;
 
