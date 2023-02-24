@@ -2,7 +2,7 @@ use minimesh::{Mesh, calculate_surface_area, calculate_volume};
 
 fn main() {
 
-    let stl_mesh = Mesh::from_stl("stl/cube.stl");
+    let stl_mesh = Mesh::from_stl("../stl/cube.stl");
 
     println!("AABB: {:?}", stl_mesh.aabb());
     println!("Dimensions: {:?}", stl_mesh.dimensions());
