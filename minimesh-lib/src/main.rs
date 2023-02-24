@@ -1,4 +1,4 @@
-use minimesh::{Mesh, calculate_surface_area, calculate_volume};
+use minimesh_lib::{Mesh, calculate_surface_area, calculate_volume};
 
 fn main() {
 
