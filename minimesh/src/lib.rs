@@ -4,7 +4,7 @@ use minimesh_lib::{Mesh, calculate_surface_area, calculate_volume};
 
 
 #[pyfunction]
-fn mesh_volume(path : &str) -> PyResult<f64> {
+fn volume(path : &str) -> PyResult<f64> {
 
     let stl_mesh = Mesh::from_stl(path);
 
@@ -12,7 +12,7 @@ fn mesh_volume(path : &str) -> PyResult<f64> {
 }
 
 #[pyfunction]
-fn mesh_area(path : &str) -> PyResult<f64> {
+fn area(path : &str) -> PyResult<f64> {
 
     let stl_mesh = Mesh::from_stl(path);
 
@@ -52,8 +52,8 @@ fn triangles(path : &str) -> PyResult<Vec<[usize; 3]>> {
 /// A Python module implemented in Rust.
 #[pymodule]
 fn minimesh(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_function(wrap_pyfunction!(mesh_volume, m)?)?;
-    m.add_function(wrap_pyfunction!(mesh_area, m)?)?;
+    m.add_function(wrap_pyfunction!(volume, m)?)?;
+    m.add_function(wrap_pyfunction!(area, m)?)?;
     m.add_function(wrap_pyfunction!(dimensions, m)?)?;
     m.add_function(wrap_pyfunction!(vertices, m)?)?;
     m.add_function(wrap_pyfunction!(triangles, m)?)?;
