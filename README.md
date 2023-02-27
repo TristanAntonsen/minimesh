@@ -2,6 +2,29 @@
 
 A very simple library to provide some basic mesh utilities (and practice some Rust).
 
+## Building the library:
+
+Create and activate a virtual environment
+
+```zsh
+python -mm venv venv
+source venv/bin/activate
+```
+
+Install maturin
+
+```zsh
+minimesh/minimesh (venv) pip install maturin
+```
+
+from the minimesh/minimesh directory:
+```zsh
+minimesh/minimesh (venv) maturin develop --release
+```
+
+The library can then be imported into python using the virtual environment.
+
+---
 Usage:
 
 ```python
