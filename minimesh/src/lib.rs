@@ -40,12 +40,11 @@ fn vertices(path : &str) -> PyResult<Vec<[f64; 3]>> {
 }
 
 #[pyfunction]
-fn vertices(path : &str) -> PyResult<Vec<[f64; 3]>> {
+fn triangles(path : &str) -> PyResult<Vec<[usize; 3]>> {
 
     let stl_mesh = Mesh::from_stl(path);
 
-    let vertices = stl_mesh.vertices.iter().map(|x| [x[0], x[1], x[2]]).collect();
-
+    let vertices = stl_mesh.tris.iter().map(|x| [x[0], x[1], x[2]]).collect();
 
     Ok(vertices)
 }
@@ -57,6 +56,7 @@ fn minimesh(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(mesh_area, m)?)?;
     m.add_function(wrap_pyfunction!(dimensions, m)?)?;
     m.add_function(wrap_pyfunction!(vertices, m)?)?;
+    m.add_function(wrap_pyfunction!(triangles, m)?)?;
     Ok(())
 }
 
